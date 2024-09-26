@@ -8,6 +8,8 @@ import search from "../../assets/icons/Search.svg";
 import cart from "../../assets/icons/Cart.svg";
 import person from "../../assets/icons/Person.svg";
 import arrow_down from "../../assets/icons/Arrow_down.svg";
+import burger from "../../assets/icons/Burger.svg";
+import mobile_search from "../../assets/icons/Mobile search.svg";
 
 const Header = () => {
     return (
@@ -23,7 +25,10 @@ const Header = () => {
             <div className="header-background">
                 <Container>
                     <header>
-                        <img src={shop_logo} alt="Shop.com logo"/>
+                        <div className="header-main-logo-wrapper">
+                            <img src={burger} className="header-main-logo-wrapper__burger"/>
+                            <img src={shop_logo} alt="Shop.com logo"/>
+                        </div>
                         <div className="header-links">
                             <span className="header-links__link-arrow">
                                 <a href="#">Shop</a>
@@ -38,6 +43,7 @@ const Header = () => {
                             <input type="text" placeholder="Search for products..."/>
                         </div>
                         <div className="header-icons">
+                            <img src={mobile_search} alt="Search" className="header-icons__mobile-search"/>
                             <img src={cart} alt="cart"/>
                             <img src={person} alt="person"/>
                         </div>
