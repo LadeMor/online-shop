@@ -2,3 +2,29 @@ $primary-bg-color:white;
 $secondary-bg-color:#F2F0F1;
 $banner-bg-color: black;
 $main-text-color:black;
+
+@font-face {
+    font-family: "Integral CF";
+    src: url('./assets/fonts/IntegralCF/IntegralCF-Bold.ttf') format('ttf'),
+        url('./assets/fonts/IntegralCF/IntegralCF-Bold.woff') format('woff'),
+        url('./assets/fonts/IntegralCF/IntegralCF-Bold.woff2') format('woff2');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url('./assets/fonts/Satoshi/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf') format('otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url('./assets/fonts/Satoshi/Satoshi_Complete/Fonts/OTF/Satoshi-Medium.otf') format('otf');
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url('./assets/fonts/Satoshi/Satoshi_Complete/Fonts/OTF/Satoshi-Bold.otf') format('otf');
+    font-weight: bold;
+}
