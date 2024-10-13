@@ -73,6 +73,7 @@
         .main-preview__models{
             max-width: 667px;
             width: 100%;
+            transform: translateY(4px);
         }
 
         .preview-photo__star{
@@ -209,5 +210,56 @@
 
     .desktop-line{
         display: none;
+    }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+#brand-banner{
+    background-color: black;
+    padding: 44px 100px;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+
+}
+
+@media screen and (max-width: 1130px) {
+    #brand-banner{  
+        justify-content:center;
+        padding: 44px 16px;
+    
+        .brand-banner__versace{
+            width: 117px;
+            height: 23px;
+        }
+
+        .brand-banner__zara{
+            width: 64px;
+            height: 26px;
+        }
+
+        .brand-banner__gucci{
+            width: 109px;
+            height: 25px;
+        }
+
+        .brand-banner__prada{
+            width: 127px;
+            height: 21px;
+        }
+
+        .brand-banner__calvin_klein{
+            width: 135px;
+            height: 22px;
+        }
     }
 }

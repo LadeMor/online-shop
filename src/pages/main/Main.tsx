@@ -4,6 +4,12 @@ import "./Main.scss";
 import preview1 from "../../assets/images/main-preview/preview1.png";
 import star from "../../assets/images/main-preview/preview-star.svg";
 
+import versace from "../../assets/images/brand-logos/versace_logo.png";
+import zara from "../../assets/images/brand-logos/zara_logo.png";
+import gucci from "../../assets/images/brand-logos/gucci_logo.png";
+import prada from "../../assets/images/brand-logos/prada_logo.png";
+import calvin_klein from "../../assets/images/brand-logos/calvin_klein_logo.png";
+
 const Main = () => {
     return(
         <Container>
@@ -37,6 +43,13 @@ const Main = () => {
                     <img src={star} alt="Vector star" className="preview-photo__star star1"/>
                     <img src={star} alt="Vector star" className="preview-photo__star star2"/>
                 </div>
+            </section>
+            <section id="brand-banner">
+                <img src={versace} alt="Versace logo" className="brand-banner__versace" />
+                <img src={zara} alt="Zara logo" className="brand-banner__zara"/>
+                <img src={gucci} alt="Gucci logo" className="brand-banner__gucci"/>
+                <img src={prada} alt="Prada logo" className="brand-banner__prada"/>
+                <img src={calvin_klein} alt="Calvin Klein logo" className="brand-banner__calvin_klein"/>
             </section>
         </Container>
     );
