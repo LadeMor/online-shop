@@ -27,7 +27,7 @@ const Header = () => {
                     <header>
                         <div className="header-main-logo-wrapper">
                             <img src={burger} className="header-main-logo-wrapper__burger"/>
-                            <img src={shop_logo} alt="Shop.com logo"/>
+                            <img src={shop_logo} alt="Shop.com logo" className="header-main-logo"/>
                         </div>
                         <div className="header-links">
                             <span className="header-links__link-arrow">

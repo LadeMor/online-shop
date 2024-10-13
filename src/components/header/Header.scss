@@ -43,13 +43,15 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 37px 0px 37px 0px;
+    padding: 24px 10px 24px 10px;
 
     .header-main-logo-wrapper{
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 16px;
+
+        
 
         .header-main-logo-wrapper__burger{
             display: none;
@@ -159,7 +161,11 @@ header{
     }
 
     header{
+     
         .header-main-logo-wrapper{
+            .header-main-logo{
+                width: 126px;
+            }
             .header-main-logo-wrapper__burger{
                 display: block;
             }

@@ -13,18 +13,18 @@ $main-text-color:black;
 
 @font-face {
     font-family: "Satoshi";
-    src: url('./assets/fonts/Satoshi/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf') format('otf');
+    src: url('./assets/fonts/Satoshi/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf') format('opentype');
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Satoshi";
-    src: url('./assets/fonts/Satoshi/Satoshi_Complete/Fonts/OTF/Satoshi-Medium.otf') format('otf');
+    src: url('./assets/fonts/Satoshi/Satoshi_Complete/Fonts/OTF/Satoshi-Medium.otf') format('opentype');
     font-weight: lighter;
 }
 
 @font-face {
     font-family: "Satoshi";
-    src: url('./assets/fonts/Satoshi/Satoshi_Complete/Fonts/OTF/Satoshi-Bold.otf') format('otf');
-    font-weight: bold;
+    src: url('./assets/fonts/Satoshi/Satoshi_Complete/Fonts/OTF/Satoshi-Bold.otf') format('opentype');
+    font-weight: 700;
 }
