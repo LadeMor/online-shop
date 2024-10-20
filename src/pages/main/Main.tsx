@@ -20,9 +20,33 @@ import product6 from "../../assets/images/product-list/top-selling/image8.png";
 import product7 from "../../assets/images/product-list/top-selling/image9.png";
 import product8 from "../../assets/images/product-list/top-selling/image10.png";
 
-import { useState } from "react";
+import browse_image1 from "../../assets/images/browse/image1.png";
+import browse_image2 from "../../assets/images/browse/image2.png";
+import browse_image3 from "../../assets/images/browse/image3.png";
+import browse_image4 from "../../assets/images/browse/image4.png";
+
+import mobile_browse1 from "../../assets/images/browse/mobile/image1.png";
+import mobile_browse2 from "../../assets/images/browse/mobile/image2.png";
+import mobile_browse3 from "../../assets/images/browse/mobile/image3.png";
+import mobile_browse4 from "../../assets/images/browse/mobile/image4.png";
+
+import { useState,useEffect } from "react";
 
 const Main = () => {
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const [productList, setProductList] = useState([
         {
@@ -143,6 +167,27 @@ const Main = () => {
             <section id="top-selling">
                 <h1 className="section-title">TOP SELLING</h1>
                 <ProductList list={topSelling}/>
+            </section>
+            <section id="browse">
+                <div className="browse__wrapper">
+                    <h1 className="section-title" style={{textAlign:"end", marginBottom:"66px", fontSize:`${windowWidth >= 1000 ? "48px" : "38px"}`}}>BROWSE BY DRESS STYLE</h1>
+                    <div className="browse__wrapper-row top">
+                        <div className="browse__wrapper-block small" style={{backgroundImage:`url("${browse_image2}")`} }>
+                            <h2 className="browse__wrapper-block-title">Casual</h2>
+                        </div>
+                        <div className="browse__wrapper-block big" style={{backgroundImage:`url("${browse_image1}")`}}>
+                            <h2 className="browse__wrapper-block-title">Formal</h2>
+                        </div>
+                    </div>
+                    <div className="browse__wrapper-row">
+                        <div className="browse__wrapper-block big" style={{backgroundImage:`url("${browse_image3}")`}}>
+                            <h2 className="browse__wrapper-block-title">Party</h2>
+                        </div>
+                        <div className="browse__wrapper-block small" style={{backgroundImage:`url("${browse_image4}")`}}>
+                            <h2 className="browse__wrapper-block-title">Gym</h2>
+                        </div>
+                    </div>
+                </div>
             </section>
         </Container>
     );
