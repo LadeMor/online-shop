@@ -1,4 +1,5 @@
 import Container from "../../components/container/Container";
+import ProductList from "../../components/product-list/ProductList";
 import "./Main.scss";
 
 import preview1 from "../../assets/images/main-preview/preview1.png";
@@ -10,18 +11,18 @@ import gucci from "../../assets/images/brand-logos/gucci_logo.png";
 import prada from "../../assets/images/brand-logos/prada_logo.png";
 import calvin_klein from "../../assets/images/brand-logos/calvin_klein_logo.png";
 
-import product1 from "../../assets/images/product-list/product1.png";
-import product2 from "../../assets/images/product-list/product2.png";
-import product3 from "../../assets/images/product-list/product3.png";
-import product4 from "../../assets/images/product-list/product4.png";
+import product1 from "../../assets/images/product-list/arrivals/product1.png";
+import product2 from "../../assets/images/product-list/arrivals/product2.png";
+import product3 from "../../assets/images/product-list/arrivals/product3.png";
+import product4 from "../../assets/images/product-list/arrivals/product4.png";
+import product5 from "../../assets/images/product-list/top-selling/image7.png";
+import product6 from "../../assets/images/product-list/top-selling/image8.png";
+import product7 from "../../assets/images/product-list/top-selling/image9.png";
+import product8 from "../../assets/images/product-list/top-selling/image10.png";
 
-import full_star from "../../assets/images/product-list/full_star.png";
-import half_star from "../../assets/images/product-list/half_star.png";
 import { useState } from "react";
 
 const Main = () => {
-
-    const productPlaceholder = Array(4).fill(null);
 
     const [productList, setProductList] = useState([
         {
@@ -58,30 +59,40 @@ const Main = () => {
         },
     ])
 
-    const renderRatingStart = (rating: number) => {
-        const fullStar = <img src={full_star} alt="Full star" />;
-        const halfStar = <img src={half_star} alt="Half star" />
-        let starsLayout = [];
-
-        if(Number.isInteger(rating)){
-            for (let index = 1; index < rating; index++) {
-                starsLayout.push(fullStar);
-            }
-        }else{
-            let integerPart = Math.floor(rating);
-            for (let index = 1; index < integerPart; index++) {
-                starsLayout.push(fullStar);
-            }
-            starsLayout.push(halfStar);
-        }
-        
-        return starsLayout;
-    }
-
-    const discountCalculation = (price: number, discount: number) => {
-        return price - ((price * 20) / 100);
-    } 
-
+    const [topSelling, setTopSelling] = useState([
+        {
+            id: 1,
+            coverPhotoUrl: product5,
+            name: "Vertical Striped Shirt",
+            rating: 5,
+            price: 232,
+            discountAmount: 20
+        },
+        {
+            id: 2,
+            coverPhotoUrl: product6,
+            name: "Courage Graphic T-shirt",
+            rating: 4,
+            price: 145,
+            discountAmount: 0
+        },
+        {
+            id: 3,
+            coverPhotoUrl: product7,
+            name: "Loose Fit Bermuda Shorts",
+            rating: 3,
+            price: 80,
+            discountAmount: 0
+        },
+        {
+            id: 4,
+            coverPhotoUrl: product8,
+            name: "Faded Skinny Jeans",
+            rating: 4.5,
+            price: 210,
+            discountAmount: 0
+        },
+    ])
     return (
         <Container>
             <section id="main-preview">
@@ -123,47 +134,15 @@ const Main = () => {
                 <img src={calvin_klein} alt="Calvin Klein logo" className="brand-banner__calvin_klein" />
             </section>
             <section id="arrivals">
-                <h1 className="arrivals__title">NEW ARRIVALS</h1>
-                <div className="product-list-wrapper">
-                    <div className="product-list">
-                        {productList.map((product, index) => (
-                            <div className="product-list__item" key={product.id}>
-                                <img className="product-list__item__main-image" src={product.coverPhotoUrl} alt={product.name} />
-                                <div className="product-list__item__info">
-                                    <h1>{product.name}</h1>
-                                    <div className="product-list__item__rating">
-                                        <div className="product-list__item__stars">
-                                            {/* <img src={full_star} alt="Full star" />
-                                            <img src={full_star} alt="Full star" />
-                                            <img src={full_star} alt="Full star" />
-                                            <img src={full_star} alt="Full star" />
-                                            <img src={half_star} alt="Half star" /> */}
-                                            {renderRatingStart(product.rating)}
-                                        </div>
-                                        <p>{product.rating}/<span className="light-text">5</span></p>
-                                    </div>
-                                    <div className="product-list__item__price-wrapper">
-                                        <h2 className="product-list__item__price">
-                                            ${product.discountAmount > 0 ? discountCalculation(product.price, product.discountAmount) : product.price}
-                                        </h2>
-                                        {
-                                            product.discountAmount > 0 ?
-                                            <>
-                                                <h2 className="product-list__item__price old-price">${product.price}</h2>
-                                                <p className="product-list__item__price-discount">-20%</p>
-                                            </>
-                                            :
-                                            null
-                                        }
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="product-list__button">
-                        <button>View All</button>
-                    </div>
-                </div>
+                <h1 className="section-title">NEW ARRIVALS</h1>
+                <ProductList list={productList}/>
+            </section>
+            <div className="horizontal-line-wrapper">
+                <div className="horizontal-line"></div>
+            </div>
+            <section id="top-selling">
+                <h1 className="section-title">TOP SELLING</h1>
+                <ProductList list={topSelling}/>
             </section>
         </Container>
     );
